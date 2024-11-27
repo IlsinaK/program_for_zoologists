@@ -16,7 +16,6 @@ public class FelineTest {
 
     @Test
     public void getFamilyTest() {
-
         assertEquals("Кошачьи", feline.getFamily());
     }
 
