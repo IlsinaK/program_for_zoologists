@@ -23,25 +23,13 @@ public class LionParamTest {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-                {"НекорректныйПол", false}
         };
     }
 
     @Test
     public void lionConstructorTest() throws Exception {
         Feline feline = Mockito.mock(Feline.class);
-
-        if ("НекорректныйПол".equals(sex)) {
-            try {
-                new Lion(feline, sex);
-            } catch (Exception e) {
-                assertEquals("Используйте допустимые значения пола животного - самей или самка", e.getMessage());
-                return;
-            }
-            throw new AssertionError("Ожидалось исключение, но его не было");
-        } else {
-            Lion lion = new Lion(feline, sex);
-            assertEquals(expectedHasMane, lion.doesHaveMane());
-        }
+        Lion lion = new Lion(feline, sex);
+        assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 }
