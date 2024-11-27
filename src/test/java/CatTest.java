@@ -21,7 +21,10 @@ public class CatTest {
 
     @Test
     public void getSoundTest() {
-        Assert.assertEquals("Мяу", cat.getSound());
+        String expectedSound = "Мяу";
+        String actualSound = cat.getSound();
+
+    Assert.assertEquals("Ожидалось, что звук кота будет '" + expectedSound + "', но получен звук: '" + actualSound + "'", expectedSound, actualSound);
     }
 
     @Test
